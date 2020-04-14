@@ -1,0 +1,7 @@
+spring:
+      cloud:
+          config:
+              name: user-config-client  #�?要从github获取的配置文件名称，不需要加后缀
+              profile: dev        #获取哪个环境的配置信�?
+              label: master 
+              uri: http://localhost:6001  #微服务先去找6001config server,在�?�过config 获取github服务地址

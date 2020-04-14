@@ -1,0 +1,10 @@
+server:
+   port: 6001
+spring:
+   application:
+      name=microservicecloud-config-server
+   cloud:
+      config:
+         server:
+             git:     #github上的git仓库名称
+                uri: https://github.com/wu-zd/microservicecloud-config.git

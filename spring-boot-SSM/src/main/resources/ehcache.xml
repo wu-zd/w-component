@@ -1,0 +1,36 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">
+    <!--指定磁盘位置：将缓存中暂时不使用的对象转移到磁盘-->
+    <diskStore path="java.io.tmpdir"/>
+    <!-- defaultCache：默认缓存策略 
+         maxElementsInMemory：内存中运行存储的最大对象的个数 
+         eternal：缓存中的对象是否持久化
+         maxElementsOnDisk：磁盘中最大缓存个数
+         memoryStoreEvictionPolicy：当内存中对象数量达到maxElementsInMemory的最大限制，
+                                                                        根据指定的策略进行清除内存。
+         Ehcache缓存3中清除策略：
+                      1：FIFO   先进先出
+           2: LFU    最少被使用，缓存的对象元素有一个hit属性，hit值最小的将被清除缓存 
+                      3：LRU    最近最少使用的，移除最后一次访问时间距离当前时间最远的对象被清除缓存          
+    -->
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxElementsOnDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+    <!-- 自定义缓存策略 -->
+    <cache name="goodsCache" 
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxElementsOnDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </cache>
+</ehcache>

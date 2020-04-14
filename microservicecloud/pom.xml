@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.wu</groupId>
+  <artifactId>microservicecloud</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <dependencyManagement>
+      <dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Dalston.SR5</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.5.13.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- mybatis 启动器 -->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>1.3.2</version>
+			</dependency>
+			<!-- mysql jdbc 数据库驱动的jar包 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>8.0.19</version>
+			</dependency>
+			<!--driud 数据库连接池坐标（阿里巴巴） -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>1.1.21</version>
+			</dependency>
+		</dependencies>
+  </dependencyManagement>
+  
+  <!-- 添加构建build -->
+  <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- 负责解析和解读的插件,解读src/main/resources
+目录下配置文件中$开头以$结尾的信息作为info的内容-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
+  <modules>
+  	<module>microservicecloud-api</module>
+  	<module>microservicecloud-provider-dept-8001</module>
+  	<module>microservicecloud-consumer-dept-80</module>
+  	<module>micromservicecloud-eureka-7001</module>
+  	<module>micromservicecloud-eureka-7002</module>
+  	<module>micromservicecloud-provider-dept-8002</module>
+  	<module>micromservicecloud-provider-dept-8003</module>
+  	<module>microservicecloud-consumer-dept-feign-80</module>
+  	<module>micromservicecloud-provider-dept-hystrix-8001</module>
+  	<module>microservicecloud-hystrix-dashboard</module>
+  	<module>microservicecloud-zuul-gateway-9004</module>
+  	<module>microservicecloud-config-server-6001</module>
+  	<module>microservicecloud-config-client</module>
+  </modules>
+</project>

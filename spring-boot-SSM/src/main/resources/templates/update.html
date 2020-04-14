@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/updateusers(name=${name},sex=${sex},age=${age},di=${di},qq=${qq},email=${email})}">
+		姓名：<input type="text" name="name" />
+		性别：<input type="text" name="sex" />
+		年龄：<input type="text" name="age" />
+		籍贯：<input type="text" name="di" />
+		QQ：<input type="text" name="qq" />
+		邮箱：<input type="text" name="email" />
+		<input type="submit" value="提交"/>
+	</form>
+</body>
+</html>

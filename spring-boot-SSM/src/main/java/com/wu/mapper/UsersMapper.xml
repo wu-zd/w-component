@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.wu.mapper.UsersMapper">
+   <select id="selectAll" resultType="Users">
+    select * from users
+   </select>
+   
+   <insert id="addUsers">
+   	insert into users values(default,#{name},#{sex},#{age},#{di},#{qq},#{email})
+   </insert>
+   
+   <update id="updateUsers">
+   	update users set name=#{name},sex=#{sex},age=#{age},di=#{di},qq=#{qq},email=#{email} where id=#{id}
+   </update>
+   
+   <delete id="delUsers">
+   	delete from users where id=#{id}
+   </delete>
+   
+   <select id="denglu">
+   	select count(1) from login where username=#{username}
+   </select>
+</mapper>
