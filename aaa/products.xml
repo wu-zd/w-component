@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE products SYSTEM  "product.dtd"> -->
+<!-- ID	名称	单价	颜色	尺寸	库存
+P001	蜘蛛王皮鞋	268	黑色	42	500
+P002	ThinkPad x240	5678	黑色	12	50
+P003	WD移动硬盘	568	蓝色	5	1000 -->
+<!DOCTYPE products [
+<!ELEMENT product (NAME,PRICE,COLOR,SIZE,REPERTORY)>
+   <!ATTLIST product ID CDATA #REQUIRED>
+   	<!ELEMENT NAME (#PCDATA)>
+   	<!ELEMENT PRICE (#PCDATA)>
+   	<!ELEMENT COLOR (#PCDATA)>
+   	<!ELEMENT SIZE (#PCDATA)>
+   	<!ELEMENT REPERTORY (#PCDATA)>
+]>
+<products>
+	<product ID="P001">
+		<NAME>蜘蛛王皮鞋</NAME>
+		<PRICE>268</PRICE>
+		<COLOR>黑色</COLOR>
+		<SIZE>42</SIZE>
+		<REPERTORY>42</REPERTORY>
+	</product>
+	<product ID="P002">
+		<NAME>ThinkPad x240</NAME>
+		<PRICE>5678</PRICE>
+		<COLOR>黑色</COLOR>
+		<SIZE>12</SIZE>
+		<REPERTORY>50</REPERTORY>
+	</product>
+	<product ID="P003">
+		<NAME>WD移动硬盘</NAME>
+		<PRICE>568</PRICE>
+		<COLOR>蓝色</COLOR>
+		<SIZE>5</SIZE>
+		<REPERTORY>1000</REPERTORY>
+	</product>
+</products>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT product  (ID,NAME,PRICE,COLOR,SIZE,REPERTORY)>
+   	<!ELEMENT NAME (#PCDATA)>
+   	<!ELEMENT PRICE (#PCDATA)>
+   	<!ELEMENT COLOR (#PCDATA)>
+   	<!ELEMENT SIZE (#PCDATA)>
+   	<!ELEMENT REPERTORY (#PCDATA)>

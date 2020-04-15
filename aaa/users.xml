@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 创建XML文档users.xml,存储5个用户信息 -->
+<users>
+       <user uname="xz"  upass="123"></user>
+       <user uname="ww"  upass="131"></user>
+       <user uname="zz"  upass="452"></user>
+       <user uname="dd"  upass="013"></user>
+       <user uname="ff"  upass="145"></user>
+</users>
